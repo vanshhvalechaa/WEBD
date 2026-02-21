@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Vansh</title>
+    <style>
+      .light{
+        width:70px;
+        height:70px;
+        border-radius:50%;
+        background:gray;
+       
+      }
+    </style>
+  </head>
+  <body>
+   
+  <h1 align="center">TRAFFIC LIGHT</h1>
+  <div id="red" class="light"></div>
+  <div id="yellow" class="light"></div>
+  <div id="green" class="light"></div>
+  <button onClick="changelight()">NEXT</button>
+  <script>
+let currentlight="red";
+    document.getElementById("red").style.background="red";
+   
+    function changelight(){
+     
+      document.getElementById("red").style.background="gray";
+       document.getElementById("yellow").style.background="gray";
+        document.getElementById("green").style.background="gray";
+   
+      if(currentlight === "red"){
+        document.getElementById("green").style.background= "green";
+        currentlight = "green";
+      }else if(currentlight === "green"){
+         document.getElementById("yellow").style.background= "yellow";
+          currentlight = "yellow";
+      }else{
+        document.getElementById("red").style.background= "red";
+        currentlight = "red";
+      }
+      }
+     
+     
+     
+ 
+   
+  </script>
+  </body>
+</html>
