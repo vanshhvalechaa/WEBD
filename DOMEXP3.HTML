@@ -1,0 +1,161 @@
+<HTML>
+<HEAD>
+<TITLE> PORTFOLIO </TITLE>
+
+<STYLE>
+BODY{
+background-color:blue;
+font-family:Arial;
+}
+.header{
+background-color:red;
+color:white;
+text-align:center;
+padding:20px;
+}
+.profile{
+background-color:white;
+margin:20px;
+padding:20px;
+}
+.photo{
+float:left;
+margin-right:20px;
+}
+.photo img{
+width:150px;
+height:150px;
+}
+.info{
+font-size:18px;
+}
+.box{
+background-color:white;
+margin:20px;
+padding:15px;
+}
+.footer{
+background-color:pink;
+color:white;
+text-align:center;
+padding:10px;
+}
+a{
+color:yellow;
+text-decoration:none;
+}
+button{
+margin:5px;
+padding:8px;
+}
+</STYLE>
+</HEAD>
+
+<BODY>
+
+<div class="header">
+<H1> VANSH VALECHA </H1>
+<H3> STUDENT </H3>
+</DIV>
+
+<div class="profile">
+<div class="photo">
+<img src="vansh.jpg">
+</DIV>
+
+<div class="info">
+<H2> ABOUT ME </H2>
+
+<!-- 1. Paragraph for DOM Manipulation -->
+<P id="aboutPara">
+I AM A COLLEGE STUDENT WHO LOVES LEARNING NEW THINGS.
+I WANT TO BECOME SUCCESSFUL AND BUILD A GOOD CAREER FOR MYSELF.
+</P>
+
+<button onclick="changeText()">Change About Me Text</button>
+
+</DIV>
+<BR><BR><BR><BR><BR>
+</DIV>
+
+<div class="box">
+<h3> PASSION </H3>
+<P>WEB DESIGNING, CODING, LEARNING TECHNOLOGY</P>
+</DIV>
+
+<div class="box">
+<h3> HOBBIES </h3>
+<P> TRAVELLING, SLEEPING </P>
+</DIV>
+
+<div class="box">
+<h3> SOCIAL LIFE </h3>
+<P> COLLEGE EVENTS, TEAM WORK, FRIENDS </P>
+</DIV>
+
+<!-- 2 & 3 Dynamic List -->
+<div class="box">
+<h3> MY SKILLS </h3>
+
+<ul id="skillList"></ul>
+
+<button onclick="addItem()">Add Skill</button>
+<button onclick="removeItem()">Remove Last Skill</button>
+
+</div>
+
+<!-- 4 Background Color Change -->
+<div class="box">
+<h3> CHANGE BACKGROUND COLOR </h3>
+
+<button onclick="changeColor('lightblue')">Blue</button>
+<button onclick="changeColor('lightgreen')">Green</button>
+<button onclick="changeColor('lightpink')">Pink</button>
+<button onclick="changeColor('blue')">Reset</button>
+
+</div>
+
+<div class="footer">
+<p>
+FOLLOW ME:
+<A HREF="#">INSTAGRAM</A>
+</p>
+</DIV>
+
+<!-- JavaScript Section -->
+<script>
+
+// 1. Change paragraph text
+function changeText() {
+    document.getElementById("aboutPara").innerHTML =
+    "I AM LEARNING JAVASCRIPT AND DOM MANIPULATION. THIS IS UPDATED USING JS!";
+}
+
+// 2. Add List Item
+let count = 1;
+
+function addItem() {
+    let li = document.createElement("li");
+    li.textContent = "Skill " + count;
+    document.getElementById("skillList").appendChild(li);
+    count++;
+}
+
+// 3. Remove Last Item
+function removeItem() {
+    let list = document.getElementById("skillList");
+    if (list.lastChild) {
+        list.removeChild(list.lastChild);
+        count--;
+    }
+}
+
+// 4. Change Background Color
+function changeColor(color) {
+    document.body.style.backgroundColor = color;
+}
+
+</script>
+
+</BODY>
+</HTML>
