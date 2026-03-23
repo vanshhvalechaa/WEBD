@@ -1,0 +1,89 @@
+import React, { useState } from 'react'
+
+function App() {
+  const [usd, setUsd] = useState(""); 
+  const [inr, setInr] = useState("");
+
+  const convert = () => {
+    if (!usd) return;
+    const rate = 83;
+    setInr(usd * rate);
+  };
+
+  return (
+    <div style={styles.container}>
+      <div style={styles.card}>
+        <h2 style={styles.heading}>USD to INR Converter</h2>
+
+        <input
+          type="number"
+          placeholder="Enter USD"
+          value={usd}
+          onChange={(e) => setUsd(e.target.value)}
+          style={styles.input}
+        />
+
+        <button onClick={convert} style={styles.button}>
+          Convert
+        </button>
+
+        <p style={styles.result}>INR: ₹{inr}</p>
+      </div>
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "linear-gradient(135deg, #667eea, #764ba2)",
+    fontFamily: "Arial, sans-serif"
+  },
+
+  card: {
+    background: "#fff",
+    padding: "30px 40px",
+    borderRadius: "12px",
+    boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
+    textAlign: "center",
+    width: "300px"
+  },
+
+  heading: {
+    marginBottom: "20px",
+    color: "#333"
+  },
+
+  input: {
+    width: "100%",
+    padding: "10px",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    marginBottom: "15px",
+    fontSize: "16px",
+    outline: "none"
+  },
+
+  button: {
+    width: "100%",
+    padding: "10px",
+    background: "#667eea",
+    color: "#fff",
+    border: "none",
+    borderRadius: "8px",
+    fontSize: "16px",
+    cursor: "pointer"
+  },
+
+  result: {
+    marginTop: "20px",
+    fontSize: "18px",
+    fontWeight: "bold",
+    color: "#444"
+  }
+};
+
+export default App;
